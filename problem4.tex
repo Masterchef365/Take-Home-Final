@@ -1,0 +1,52 @@
+\subsection{Part A}
+\pgfplotsset{ % Define a common style, so we don't repeat ourselves
+	DiffEq/.style={
+		width=0.6\textwidth, % Overall width of the plot
+		axis equal image, % Unit vectors for both axes have the same length
+		view={0}{90}, % We need to use "3D" plots, but we set the view so we look at them from straight up
+		xmin=-1.7, xmax=1.7, % Axis limits
+		ymin=-1.7, ymax=1.7,
+		domain=-1:1, y domain=-1:1, % Domain over which to evaluate the functions
+		hide axis,
+		samples=3, % How many arrows?
+		cycle list={    % Plot styles
+			gray,
+			quiver={
+				u={1}, v={f(x)}, % End points of the arrows
+				scale arrows=0.15,
+				every arrow/.append style={
+					-latex % Arrow tip
+				},
+			}\\
+			red, samples=31, smooth, thick, no markers, domain=-1.1:1.1\\ % The plot style for the function
+		}
+	}
+}
+
+\begin{center}
+	\begin{tikzpicture}[
+		declare function={f(\x) = cos(pi * \x r)*(\y-1)^2;} % Define which function we're using
+		]
+		\begin{axis}[
+			DiffEq, title={$\dfrac{dy}{dx}=(y-1)^2\cos{(\pi x)}$}
+			]
+			\addplot3 (x,y,0);
+			\draw (axis cs:-1.4, 0.0) node[left] {$-1$} -- (axis cs:1.5, 0.0) node [right] {$1$};
+			\draw (axis cs:0.0, -1.5) node[below] {$-1$} -- (axis cs:0.0, 1.4) node [above] {$1$};
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+
+\subsection{Part B}
+Despite being able to simply look at the graph, we can infer that the slope from the differential equation will be zero at $y = 1$ because the entire equation is multiplied by $(y-1)^{-2}$.
+
+\subsection{Part C}
+\[ f(1) = 0; \enspace y = 0, \enspace x = 1 \]
+\[ \frac{dy}{dx}=(y-1)^2\cos{(\pi x)} \]
+\[ \frac{dy}{(y-1)^2}=\cos{(\pi x)}\,dx \]
+\[ (y-1)^{-2}\,dy=\cos{(\pi x)}\,dx \]
+\[ \int (y-1)^{-2}\,dy= \int \cos{(\pi x)}\,dx \]
+\[ \frac{1}{1-0} = \frac{\sin{(\pi 1)}}{\pi} + C_3 \]
+\[ 1 = 0 + C_3 \]
+\[ 1 = C_3 \]
+\[ \frac{1}{1-y} = \frac{\sin{(\pi x)}}{\pi} + 1 \]
