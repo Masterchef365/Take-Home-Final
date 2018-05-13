@@ -1,0 +1,37 @@
+\[ h(x) = f(g(x))-6 \]
+\[ h'(x) = f'(g(x))g'(x) \]
+\begin{center}
+	\begin{tabular}{ | c || c | c | c | c | c | c | }
+		\hline
+		\rule{0pt}{4ex}
+		$x$ & $f(x)$ & $f'(x)$ & $g(x)$ & $g'(x)$ & $h(x)$ & $h'(x)$ \\
+		\hline
+		\hline
+		1 & 6  & 4  & 2 & 5 & 3  & 2 \\
+		\hline
+		2 & 9  & 2  & 3 & 1 & 4  & -8 \\
+		\hline
+		3 & 10 & -4 & 4 & 2 & -7 & 21 \\
+		\hline
+		4 & -1 & 3  & 6 & 7 & & \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\subsection{Part A}
+$h(r)$ is continuous, $h(2) = 4$, and $h(3) = -7$. By \textit{IVT}, $\exists \enspace r \in [2, 3]$ such that $h(r) = -5$.
+
+\subsection{Part B}
+$h'(r)$ is continuous, $h(2) = -8$, and $h(3) = 21$. By \textit{IVT}, $\exists \enspace r \in [2, 3]$ such that $h'(r) = -5$.
+
+\subsection{Part C}
+\[ \int_{a}^{b} f(x) = F(b) - F(a) \]
+\[ w(x) = \int_{1}^{g(x)} f(t)\,dt = F(1) - F(g(x)) \]
+\[ w'(x) = f(1) - f(g(x))g'(x) \]
+\[ w'(3) = f(1) - f(g(3))g'(3) = 6 - f(4)(2) = 6 + 2 = 8 \]
+
+\subsection{Part D}
+\[ y = g^{-1}(x), \enspace x = 2 \]
+\[ y = g^{-1}(2), \enspace g(1) = 2, \enspace g^{-1}(2) = 1 \]
+\[ m = g^{-1}'(2), \enspace g'(3) = 2, \enspace g^{-1}'(2) = 3 \]
+\[ y - 1 = 3(x - 2) \]
