@@ -18,21 +18,15 @@
 	$f(x) = \frac{1}{4} + \sin{\pi x}, \enspace g(x) = 4^{-x}$ \\
 \end{center}
 
-\noindent
-Finding the area of $R$: \\
-
+\subsection{Part A}
 First, we find the first intersection of $f(x)$ and $g(x)$. We'll call the $x$ value of the intersection $k$. We can then use a calculator approximate the integration of the difference between $g(x)$ and $f(x)$ from $0$ until $k$ to obtain the area $R$.
 \[ R = \int_{0}^{k} [g(x) - f(x)]dx \approx 0.064 \]
 
-\noindent
-Finding the area of $S$ \\
-
+\subsection{Part B}
 Next, we can find the second intersection of $f(x)$ and $g(x)$ (which we will call $j$. We can then integrate similarly to get the area; Note that we reverse the order of $g(x)$ and $f(x)$ because $f(x)$ has a higher value of $y$.
 \[	S = \int_{k}^{j} [f(x) - g(x)]dx \approx 0.410 \]
 
-\noindent
-Revolving $S$:
-
+\subsection{Part C}
 To revolve $S$ around the horizontal line $y = -1$, we have to adjust $f(x)$ and $g(x)$ by $+1$, and then shroud them in the circle area equation $\pi r^2$, finally integrating the resulting difference between $k$ and $j$ to obtain volume.
 \[ S_{\text{vol}} = \pi\!\int_{k}^{j} [(f(x)+1)^2 - (g(x)+1)^2]\,dx \approx 4.56 \]
 
